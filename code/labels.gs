@@ -1,4 +1,33 @@
 
+//Init of index
+function init() {
+  PropertiesService.getScriptProperties().setProperty("startIndex", 0)
+}
+
+
+//Constantes
+//If the script is too lng (because the files list is too long ), we can break down the function call by breaking the data into smaller array of 500 lines
+//we use this step variable 
+const step = 500 
+const docID = "xxxx" // The Google Sheets for the files list
+const SP = SpreadsheetApp.openById(docID)
+
+//The label Json format
+const LABEL = {
+  "id": "xxxxx",
+  "champ1": {"id": "xxxxxxxxxx"},
+  "champ2": {"id": "xxxxxxxxxx"},
+  "champ3": {"id": "xxxxxxxxxx" },
+  "champ4Liste": {"id": "xxxxxxxxxx",
+    "options": [
+      {"name": "option1","id": "xxxxxxxxxx"},
+      {"name": "option2","id": "xxxxxxxxxx"}, 
+      {"name": "option3","id": "xxxxxxxxxx"}
+    ]
+  }
+}
+
+
 
 /*******************************************************************************************************
 * This function apply a value to a list type label field
